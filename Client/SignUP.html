@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gym Management System</h1>
+    </header>
+
+    <div class="container">
+        <!-- Form to Add a New Member -->
+        <form action="add_member.php" method="POST">
+            <h2>Add New Member</h2>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="membership_id">Membership ID:</label>
+            <select id="membership_id" name="membership_id">
+                <!-- Options to be populated dynamically -->
+                <option value="1">Standard Membership</option>
+                <option value="2">Premium Membership</option>
+            </select>
+
+            <button type="submit">Add Member</button>
+        </form>
+
+        <!-- Form to Search Members -->
+        <form action="search_member.php" method="GET">
+            <h2>Search Members</h2>
+            <label for="search">Search by Name or Email:</label>
+            <input type="text" id="search" name="search" required>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Form to Add a New Class -->
+        <form action="add_class.php" method="POST">
+            <h2>Add New Class</h2>
+            <label for="class_name">Class Name:</label>
+            <input type="text" id="class_name" name="class_name" required>
+
+            <label for="class_type">Class Type:</label>
+            <input type="text" id="class_type" name="class_type" required>
+
+            <label for="gym_id">Gym ID:</label>
+            <select id="gym_id" name="gym_id">
+                <!-- Options to be populated dynamically -->
+                <option value="1">Downtown Gym</option>
+                <option value="2">Uptown Gym</option>
+            </select>
+
+            <label for="trainer_id">Trainer ID:</label>
+            <select id="trainer_id" name="trainer_id">
+                <!-- Options to be populated dynamically -->
+                <option value="1">John Doe</option>
+                <option value="2">Jane Smith</option>
+            </select>
+
+            <button type="submit">Add Class</button>
+        </form>
+    </div>
+</body>
+</html>
